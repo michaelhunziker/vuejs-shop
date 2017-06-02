@@ -4,6 +4,7 @@
     <h2>sunglasses</h2>
     <div v-for="sunglass in sunglasses">
       {{sunglass.model}} {{sunglass.price.toFixed(2)}} CHF
+      <button v-on:click="add()">+</button>
     </div>
   </div>
 </template>
@@ -24,6 +25,11 @@
           }
 
         ]
+      }
+    },
+    methods: {
+      add () {
+        alert('adding fancy sunglasses!')
       }
     }
   }
