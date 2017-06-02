@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>vue.shop - for a better l<span class="infinity">&infin;</span>k!</h1>
+    <h1>l<span class="infinity">&infin;</span>king good!</h1>
     <h2>sunglasses</h2>
   </div>
 </template>
