@@ -2,6 +2,9 @@
   <div>
     <h1>vue.shop - for a better l<span class="infinity">&infin;</span>k!</h1>
     <h2>sunglasses</h2>
+    <div v-for="sunglass in sunglasses">
+      {{sunglass.model}} {{sunglass.price.toFixed(2)}} CHF
+    </div>
   </div>
 </template>
 
@@ -10,6 +13,17 @@
     name: 'list',
     data () {
       return {
+        sunglasses: [
+          {
+            model: 'Ray Ban Aviator',
+            price: 351
+          },
+          {
+            model: 'Oakley Jawbreaker',
+            price: 210.50
+          }
+
+        ]
       }
     }
   }
