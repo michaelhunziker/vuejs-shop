@@ -3,7 +3,7 @@
     <h1>l<span class="infinity">&infin;</span>king good!</h1>
     <h2>sunglasses</h2>
     <div v-for="sunglass in sunglasses">
-      {{sunglass.model}} {{sunglass.price.toFixed(2)}} CHF
+      <router-link :to="{ name: 'detail', params: { productId: sunglass.productId }}">User</router-link>
       <button v-on:click="add()">+</button>
     </div>
   </div>
@@ -16,11 +16,13 @@
       return {
         sunglasses: [
           {
-            model: 'Ray Ban Aviator',
+            productId: 123,
+            productName: 'Ray Ban Aviator',
             price: 351
           },
           {
-            model: 'Oakley Jawbreaker',
+            productId: 234,
+            productName: 'Oakley Jawbreaker',
             price: 210.50
           }
 
