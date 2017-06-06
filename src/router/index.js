@@ -13,7 +13,7 @@ export default new Router({
       component: List
     },
     {
-      path: '/detail/:productId',
+      path: '/detail/:id',
       name: 'detail',
       component: Detail,
       props: true

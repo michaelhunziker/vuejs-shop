@@ -1,0 +1,14 @@
+{
+  "sunglasses": [
+    {
+      "id": 123,
+      "productName": "Ray Ban Aviator",
+      "price": 351
+    },
+    {
+      "id": 234,
+      "productName": "Oakley Jawbreaker",
+      "price": 210.50
+    }
+  ]
+}
