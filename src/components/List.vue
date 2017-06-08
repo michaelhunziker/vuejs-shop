@@ -2,43 +2,27 @@
   <div>
     <h1>l<span class="infinity">&infin;</span>king good!</h1>
     <h2>sunglasses</h2>
-    {{count}}
-    <button v-on:click="increment()">+</button>
-    <button v-on:click="decrement()">-</button>
     <div v-for="sunglasses in sunglassesList">
       <router-link :to="{ name: 'detail', params: { id: sunglasses.id }}">{{sunglasses.productName}}</router-link>
-      <button v-on:click="add()">+</button>
+      <button v-on:click="addToShoppingCart(sunglasses)">+</button>
     </div>
   </div>
 </template>
 
 <script>
-  import axios from 'axios'
+
   import { mapState, mapActions } from 'vuex'
 
   export default {
     name: 'list',
-    data () {
-      return {
-        sunglassesList: null
-      }
-    },
     computed: {
-      ...mapState(['count'])
+      ...mapState(['sunglassesList'])
     },
     methods: {
-      ...mapActions(['increment', 'decrement']),
-      add () {
-        alert('adding fancy sunglasses!')
-      }
+      ...mapActions(['addToShoppingCart'])
     },
     created () {
-      axios.get('http://localhost:3000/sunglasses')
-        .then(response => {
-          this.sunglassesList = response.data
-        }, response => {
-          console.error(response)
-        })
+      this.$store.dispatch('loadSunglasses')
     }
   }
 </script>

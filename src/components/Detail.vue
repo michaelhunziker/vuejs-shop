@@ -16,6 +16,11 @@ D
         sunglasses: {}
       }
     },
+    methods: {
+      setSunglasses (sunglasses) {
+        this.sunglasses = sunglasses
+      }
+    },
     beforeRouteEnter (to, from, next) {
       axios.get('http://localhost:3000/sunglasses/' + to.params.id)
         .then(response => {
@@ -33,11 +38,6 @@ D
         }, response => {
           console.error(response)
         })
-    },
-    methods: {
-      setSunglasses (sunglasses) {
-        this.sunglasses = sunglasses
-      }
     }
   }
 </script>

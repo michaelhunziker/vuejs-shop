@@ -4,28 +4,43 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
 Vue.config.productionTip = false
 
 const store = new Vuex.Store({
   state: {
-    count: 0
+    shoppingCartList: [],
+    sunglassesList: []
   },
   mutations: {
-    increment (state) {
-      state.count++
+    updateSunglassesList (state, list) {
+      state.sunglassesList = list
     },
-    decrement (state) {
-      state.count--
+    addToShoppingCart (state, product) {
+      state.shoppingCartList.push(product)
+    },
+    removeFromShoppingCart (state, product) {
+      // TODO: USE LODASH!!!
+      let index = state.shoppingCartList.indexOf(product)
+      if (index !== -1) {
+        state.shoppingCartList.splice(index, 1)
+      }
     }
   },
   actions: {
-    increment (context) {
-      context.commit('increment')
+    loadSunglasses ({commit}) {
+      axios.get('http://localhost:3000/sunglasses')
+        .then(response => {
+          commit('updateSunglassesList', response.data)
+        })
     },
-    decrement (context) {
-      context.commit('decrement')
+    addToShoppingCart ({commit}, product) {
+      commit('addToShoppingCart', product)
+    },
+    removeFromShoppingCart ({commit}, product) {
+      commit('removeFromShoppingCart', product)
     }
   }
 })
@@ -36,5 +51,5 @@ new Vue({
   store,
   router,
   template: '<App/>',
-  components: { App }
+  components: {App}
 })
