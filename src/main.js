@@ -22,7 +22,6 @@ const store = new Vuex.Store({
       state.shoppingCartList.push(product)
     },
     removeFromShoppingCart (state, product) {
-      // TODO: USE LODASH!!!
       let index = state.shoppingCartList.indexOf(product)
       if (index !== -1) {
         state.shoppingCartList.splice(index, 1)
