@@ -9,6 +9,11 @@
       "id": 234,
       "productName": "Oakley Jawbreaker",
       "price": 210.50
+    },
+    {
+      "id": 789,
+      "productName": "Nike Terminus",
+      "price": 150
     }
   ]
 }

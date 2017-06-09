@@ -11,12 +11,12 @@
 
 <script>
 
-  import { mapState, mapActions } from 'vuex'
+  import { mapGetters, mapActions } from 'vuex'
 
   export default {
     name: 'list',
     computed: {
-      ...mapState(['sunglassesList'])
+      ...mapGetters(['sunglassesList'])
     },
     methods: {
       ...mapActions(['addToShoppingCart'])
