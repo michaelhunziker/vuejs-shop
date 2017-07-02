@@ -2,11 +2,13 @@ D
 <template>
   <div>
     <h2>{{ sunglasses.productName }}</h2>
+    <button v-on:click="addToShoppingCart(sunglasses)">+</button>
   </div>
 </template>
 
 <script>
   import axios from 'axios'
+  import { mapActions } from 'vuex'
 
   export default {
     name: 'detail',
@@ -19,7 +21,8 @@ D
     methods: {
       setSunglasses (sunglasses) {
         this.sunglasses = sunglasses
-      }
+      },
+      ...mapActions(['addToShoppingCart'])
     },
     beforeRouteEnter (to, from, next) {
       axios.get('http://localhost:3000/sunglasses/' + to.params.id)
