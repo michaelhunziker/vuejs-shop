@@ -17,6 +17,11 @@
     name: 'list',
     computed: {
       ...mapGetters(['sunglassesList'])
+
+      // mapGetters is a shorthand for this:
+      // sunglassesList () {
+      //   return this.$store.state.sunglassesList
+      // }
     },
     methods: {
       ...mapActions(['addToShoppingCart'])
