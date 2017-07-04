@@ -1,4 +1,3 @@
-D
 <template>
   <div>
     <h2>{{ sunglasses.productName }}</h2>
