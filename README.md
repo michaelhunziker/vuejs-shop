@@ -1,6 +1,8 @@
 # vue-shop
 
-> A webshop for fancy sunglasses.
+> A small Vue.js app for the basel.js meetup presentation: https://www.meetup.com/de-DE/basel-js/events/240164492/
+>
+> Slides: https://drive.google.com/file/d/0ByOt9F8CudEJYzU0MmNTRURRczQ
 
 ## Build Setup
 
