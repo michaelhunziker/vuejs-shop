@@ -11,6 +11,12 @@
       "productName": "Oakley Jawbreaker",
       "price": 210.50,
       "description": "Oakley Jawbreaker ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu."
+    },
+    {
+      "id": 567,
+      "productName": "Adidas ClearView",
+      "price": 124.60,
+      "description": "Adidas ClearView ipsum dolor sit amet, consectetuer adipiscing elit. Bla bla bla."
     }
   ]
 }
