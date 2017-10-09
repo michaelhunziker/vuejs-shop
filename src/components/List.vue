@@ -20,7 +20,7 @@
 
       // mapGetters is a shorthand for this:
       // sunglassesList () {
-      //   return this.$store.state.sunglassesList
+      // return this.$store.getters.sunglassesList
       // }
     },
     methods: {
