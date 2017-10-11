@@ -10,7 +10,7 @@
 # install dependencies
 npm install
 
-# run json-server for mocked data
+# run json-server for mocked data (used in dev mode)
 npm server
 
 # serve with hot reload at localhost:8080
