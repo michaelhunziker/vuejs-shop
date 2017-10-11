@@ -1,7 +1,12 @@
 <template>
   <div>
     <h2>{{ sunglasses.productName }}</h2>
-    <button v-on:click="addToShoppingCart(sunglasses)">+</button>
+    <div>
+      {{sunglasses.description}}
+    </div>
+    <div>
+      <button v-on:click="addToShoppingCart(sunglasses)">+</button>
+    </div>
   </div>
 </template>
 
@@ -18,9 +23,6 @@
       }
     },
     methods: {
-      setSunglasses (sunglasses) {
-        this.sunglasses = sunglasses
-      },
       addToShoppingCart () {
         this.$store.commit(mutationTypes.ADD_TO_SHOPPING_CART, this.sunglasses)
       }
@@ -28,11 +30,12 @@
     beforeRouteEnter (to, from, next) {
       axios.get('http://localhost:3000/sunglasses/' + to.params.id)
         .then(response => {
-          next(vm => vm.setSunglasses(response.data))
+          next(vm => { vm.sunglasses = response.data })
         }, response => {
           console.error(response)
         })
     }
+    // TODO: Implement beforeRouteUpdate: See https://router.vuejs.org/en/advanced/navigation-guards.html
   }
 </script>
 
