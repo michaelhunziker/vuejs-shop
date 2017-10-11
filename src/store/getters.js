@@ -1,8 +1,12 @@
 import _ from 'lodash'
+import { getterTypes } from './types'
 
-export const sunglassesList = (state) => {
-  return _.sortBy(state.sunglassesList, 'productName')
-}
-export const shoppingCartList = (state) => {
-  return _.sortBy(state.shoppingCartList, 'productName')
+export default {
+  [getterTypes.SUNGLASSES_LIST] (state) {
+    return _.sortBy(state.sunglassesList, 'productName')
+  },
+
+  [getterTypes.SHOPPING_CART_LIST] (state) {
+    return _.sortBy(state.shoppingCartList, 'productName')
+  }
 }

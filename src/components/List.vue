@@ -11,23 +11,22 @@
 
 <script>
 
-  import { mapGetters, mapActions } from 'vuex'
+  import { actionTypes, getterTypes, mutationTypes } from '@/store/types'
 
   export default {
     name: 'list',
     computed: {
-      ...mapGetters(['sunglassesList'])
-
-      // mapGetters is a shorthand for this:
-      // sunglassesList () {
-      // return this.$store.getters.sunglassesList
-      // }
+      sunglassesList () {
+        return this.$store.getters[getterTypes.SUNGLASSES_LIST]
+      }
     },
     methods: {
-      ...mapActions(['addToShoppingCart'])
+      addToShoppingCart (sunglasses) {
+        this.$store.commit(mutationTypes.ADD_TO_SHOPPING_CART, sunglasses)
+      }
     },
     created () {
-      this.$store.dispatch('loadSunglasses')
+      this.$store.dispatch(actionTypes.LOAD_SUNGLASSES)
     }
   }
 </script>

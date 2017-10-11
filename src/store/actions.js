@@ -1,16 +1,11 @@
 import axios from 'axios'
+import { actionTypes, mutationTypes } from './types'
 
-export const loadSunglasses = ({commit}) => {
-  axios.get('http://localhost:3000/sunglasses')
-    .then(response => {
-      commit('updateSunglassesList', response.data)
-    })
-}
-
-export const addToShoppingCart = ({commit}, product) => {
-  commit('addToShoppingCart', product)
-}
-
-export const removeFromShoppingCart = ({commit}, product) => {
-  commit('removeFromShoppingCart', product)
+export default {
+  [actionTypes.LOAD_SUNGLASSES] ({commit}) {
+    return axios.get('http://localhost:3000/sunglasses')
+      .then(response => {
+        commit(mutationTypes.UPDATE_SUNGLASSES_LIST, response.data)
+      })
+  }
 }
