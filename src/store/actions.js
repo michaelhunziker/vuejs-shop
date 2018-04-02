@@ -1,5 +1,6 @@
 import axios from 'axios'
-import { actionTypes, mutationTypes } from './types'
+import { mutationTypes } from './types'
+import { actionTypes } from '@/store/types'
 
 export default {
   [actionTypes.LOAD_SUNGLASSES] ({commit}) {
